@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: {{ .Values.image.name }}-destination
+  name: {{ .Values.image.name }}-vservice
   namespace: stage-org1
 spec:
   host: {{ .Values.image.name }}-service

@@ -1,0 +1,10 @@
+image:
+  name: IMAGE-NAME
+  tag: vVERSION
+  fullName: beppev/IMAGE-NAME:VERSION
+  masterName: beppev/IMAGE-NAME:MASTER
+
+
+labels:
+  name: IMAGE-NAME
+  version: vVERSION

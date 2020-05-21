@@ -7,14 +7,13 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", respond)
+	http.HandleFunc("/", reply)
 	err:= http.ListenAndServe(":80", nil)
 	if err != nil {
 		os.Exit(1)
 	}
 }
 
-func respond(w http.ResponseWriter, r *http.Request) {
+func reply(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "hello world")
 }
-

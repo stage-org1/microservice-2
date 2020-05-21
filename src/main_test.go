@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-
-func Test(t *testing.T) {
-
+func Testsuccess(t *testing.T) {
+	//t.Errorf("This is supposed to fail")
 }

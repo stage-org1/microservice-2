@@ -32,7 +32,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/Cellar/go/1.14.2_1/libexec" />
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.14.3/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -75,6 +75,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="624" y="437" key="#GOROOT" timestamp="1590082944904">
+      <screen x="0" y="23" width="1680" height="959" />
+    </state>
+    <state x="624" y="437" key="#GOROOT/0.23.1680.959@0.23.1680.959" timestamp="1590082944904" />
     <state x="503" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1589827980302">
       <screen x="0" y="23" width="1680" height="959" />
     </state>

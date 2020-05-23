@@ -5,14 +5,14 @@ metadata:
   namespace: stage-org1
 spec:
   hosts:
-    - {{ .Values.image.name }}-vservice
+    - {{ .Values.image.name }}-service
   http:
     - route:
       - destination:
-          host: {{ .Values.image.name }}-service
+          host:  {{ .Values.image.name }}-service
           subset: experimental
         weight: {{ .Values.weight.experimental }}
       - destination:
-          host: {{ .Values.image.name }}-service
+          host:  {{ .Values.image.name }}-service
           subset: master
         weight: {{ .Values.weight.master }}

@@ -3,14 +3,13 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"os"
 )
 
 func main() {
 	http.HandleFunc("/", reply)
 	err:= http.ListenAndServe(":80", nil)
 	if err != nil {
-		os.Exit(1)
+		fmt.Println(err.Error())
 	}
 }
 

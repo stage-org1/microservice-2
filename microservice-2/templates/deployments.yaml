@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.image.name }}-deployment
+  name: {{ .Values.image.name }}-deployment-experimental
   namespace: stage-org1
   labels:
     name: {{ .Values.image.name }}
@@ -29,7 +29,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.image.name }}-deployment-latest
+  name: {{ .Values.image.name }}-deployment-master
   namespace: stage-org1
   labels:
     name: {{ .Values.image.name }}

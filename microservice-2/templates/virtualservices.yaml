@@ -8,11 +8,10 @@ spec:
     - {{ .Values.image.name }}-service
   http:
   
-    - fault:
-        delay:
-          fixedDelay: 1s
-          percentage: 
-            value: 30
+    - retries:
+        attempts: 3
+        perTryTimeout: .5s
+      timeout: 2s
       route:
         - destination:
             host:  {{ .Values.image.name }}-service

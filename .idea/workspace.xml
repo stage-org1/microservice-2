@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99b1aa4c-bb95-47bc-abfc-60e1402a9854" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-2/templates/destinationrules.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-2/templates/destinationrules.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-2/templates/virtualservices.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-2/templates/virtualservices.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,8 +1,10 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: {{ .Values.image.name }}-vservice
+  name:  {{ .Values.image.name }}-gateway
   namespace: stage-org1
+  labels:
+    app: {{ .Values.image.name }}
 spec:
   selector:
     name: {{ .Values.image.name }}

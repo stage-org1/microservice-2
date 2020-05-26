@@ -1,14 +1,19 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: {{ .Values.image.name }}-vservice
+  name: {{ .Values.image.name }}-rule
   namespace: stage-org1
+  labels:
+    app: {{ .Values.image.name }}
 spec:
   host: {{ .Values.image.name }}-service
+  trafficPolicy:
+    loadBalancer:
+      simple: ROUND_ROBIN
   subsets:
     - name: master
       labels:
-        version: {{ .Values.image.mtag }}
+        version: master
     - name: experimental
       labels:
-        version: {{ .Values.labels.version }}
+        version: experimental

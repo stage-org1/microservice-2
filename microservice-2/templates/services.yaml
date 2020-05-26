@@ -2,11 +2,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.image.name }}-vservice
+  name: {{ .Values.image.name }}-service
   namespace: stage-org1
+  labels:
+    app: {{ .Values.image.name }}
 spec:
   selector:
-    name: {{ .Values.image.name }}
+    app: {{ .Values.image.name }}
   ports:
     - protocol: TCP
       port: 80

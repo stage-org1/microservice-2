@@ -21,4 +21,5 @@ spec:
       retries:
         attempts: 3
         perTryTimeout: 1s
+        retryRemoteLocalities: yes
       timeout: 5s

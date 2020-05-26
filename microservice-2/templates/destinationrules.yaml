@@ -7,6 +7,9 @@ metadata:
     app: {{ .Values.image.name }}
 spec:
   host: {{ .Values.image.name }}-service
+  trafficPolicy:
+    loadBalancer:
+      simple: ROUND_ROBIN
   subsets:
     - name: master
       labels:

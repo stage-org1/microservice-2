@@ -10,12 +10,14 @@ import (
 
 func main() {
 	if (rand.Intn(100) < 70) {
+		fmt.Println("this one is going to work")
 		http.HandleFunc("/", reply)
 		err:= http.ListenAndServe(":80", nil)
 		if (err != nil) {
 			fmt.Println(err.Error())
 		}
 	} else {
+		fmt.Println("failing pod")
 		time.Sleep(time.Second*50) //sleep 50 seconds and then crash
 		os.Exit(1)
 	}

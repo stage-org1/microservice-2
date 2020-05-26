@@ -9,12 +9,7 @@ spec:
   hosts:
     - {{ .Values.image.name }}-service
   http:
-  
-    - retries:
-        attempts: 3
-        perTryTimeout: .5s
-      timeout: 2s
-      route:
+    - route:
         - destination:
             host:  {{ .Values.image.name }}-service
             subset: experimental
@@ -23,3 +18,7 @@ spec:
             host:  {{ .Values.image.name }}-service
             subset: master
           weight: {{ .Values.weight.master }}
+      retries:
+        attempts: 3
+        perTryTimeout: 1s
+      timeout: 5s

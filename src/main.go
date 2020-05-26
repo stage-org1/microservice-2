@@ -20,8 +20,8 @@ func reply(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("time", "0")
 		fmt.Fprintf(w, "hello world")
 	} else {
-		time.Sleep(time.Second * 3)
-		w.Header().Set("time", "3")
+		time.Sleep(time.Second * 8)
+		w.Header().Set("time", "8")
 		fmt.Fprintf(w, "hello world")
 	}
 }

@@ -12,7 +12,7 @@ func main() {
 	rand.Seed(time.Now().UTC().UnixNano()) //om niet altijd een failende pod te genereren moeten we true randomness hebben, hopelijk werkt deze
 	i := rand.Intn(100)
 	fmt.Printf("pod percentage success: %v", i)
-	if (i < 70) {
+	if (i < 50) {
 		fmt.Println("this one is going to work")
 		http.HandleFunc("/", reply)
 		err:= http.ListenAndServe(":80", nil)

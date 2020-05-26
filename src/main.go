@@ -5,14 +5,21 @@ import (
 	"math/rand"
 	"net/http"
 	"time"
+	"os"
 )
 
 func main() {
-	http.HandleFunc("/", reply)
-	err:= http.ListenAndServe(":80", nil)
-	if (err != nil) {
-		fmt.Println(err.Error())
+	if (rand.Intn(100) < 70) {
+		http.HandleFunc("/", reply)
+		err:= http.ListenAndServe(":80", nil)
+		if (err != nil) {
+			fmt.Println(err.Error())
+		}
+	} else {
+		time.Sleep(time.Second*50) //sleep 50 seconds and then crash
+		os.Exit(1)
 	}
+	
 }
 
 func reply(w http.ResponseWriter, r *http.Request) {

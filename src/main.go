@@ -2,9 +2,7 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"net/http"
-	"time"
 )
 
 func main() {
@@ -16,12 +14,6 @@ func main() {
 }
 
 func reply(w http.ResponseWriter, r *http.Request) {
-	if (rand.Intn(100) < 66) {
-		w.Header().Set("time", "0")
-		fmt.Fprintf(w, "hello world")
-	} else {
-		time.Sleep(time.Second * 8)
-		w.Header().Set("time", "8")
-		fmt.Fprintf(w, "hello world")
-	}
+	w.Header().Set("time", "0")
+	fmt.Fprintf(w, "hello world")
 }

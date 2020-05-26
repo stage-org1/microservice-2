@@ -5,7 +5,7 @@ metadata:
   name: {{ .Values.image.name }}-service
   namespace: stage-org1
   labels:
-    app: stage-org1
+    app: {{ .Values.image.name }}
 spec:
   selector:
     name: {{ .Values.image.name }}

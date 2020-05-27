@@ -28,7 +28,7 @@ func main() {
 }
 
 func reply(w http.ResponseWriter, r *http.Request) {
-	delay := rand.Intn(1500)
+	delay := rand.Intn(1200)
 	requestContext := r.Context()
 	fmt.Println("request received and handling right now")
 	version := r.Header.Get("version")

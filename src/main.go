@@ -12,7 +12,7 @@ func main() {
 	rand.Seed(time.Now().UTC().UnixNano()) //om niet altijd een failende pod te genereren moeten we true randomness hebben, hopelijk werkt deze
 	i := rand.Intn(100)
 	fmt.Printf("pod percentage success: %v", i)
-	if (i < 0) {
+	if (i < 50) {
 		fmt.Println("this one is going to work")
 		http.HandleFunc("/", reply)
 		err:= http.ListenAndServe(":80", nil)
@@ -21,14 +21,23 @@ func main() {
 		}
 	} else {
 		fmt.Println("failing pod")
-		time.Sleep(time.Second*50) //sleep 50 seconds and then crash
+		time.Sleep(time.Minute*50) //sleep 50 seconds and then crash
 		os.Exit(1)
 	}
 	
 }
 
 func reply(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("time", "0")
-	fmt.Fprintf(w, "hello world")
+	delay := rand.Intn(2000)
+	requestContext := r.Context()
+	fmt.Println("request received and handling right now")
+	select {
+		case <- requestContext.Done():
+			fmt.Println("request has been cancelled")
+		case <- time.After(time.Millisecond * time.Duration(delay)):
+			fmt.Printf("a request has been delayed by %s milliseconds\n", delay)
+			w.Header().Set("time", "0")
+			fmt.Fprintf(w, "hello world")
+	}
 
 }

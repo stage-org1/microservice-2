@@ -5,11 +5,11 @@ weight:
 replicas: 1
 
 labels:
-  name: IMAGE-NAME
+  name: microservice-2
   app: stage-org1-app
 
 image:
-  name: IMAGE-NAME
+  name: microservice-2
   master: beppev/IMAGE-NAME:MASTER
   experimental: beppev/IMAGE-NAME:VERSION
 

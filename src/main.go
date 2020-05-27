@@ -31,11 +31,12 @@ func reply(w http.ResponseWriter, r *http.Request) {
 	delay := rand.Intn(2000)
 	requestContext := r.Context()
 	fmt.Println("request received and handling right now")
+	version := r.Header.Get("version")
 	select {
 		case <- requestContext.Done():
 			fmt.Println("request has been cancelled")
 		case <- time.After(time.Millisecond * time.Duration(delay)):
-			fmt.Printf("a request has been delayed by %s milliseconds\n", delay)
+			fmt.Printf("a request has been delayed by %s milliseconds, on version %s\n", delay, version)
 			w.Header().Set("time", "0")
 			fmt.Fprintf(w, "hello world")
 	}

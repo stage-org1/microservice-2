@@ -2,6 +2,8 @@ weight:
   master: 0
   experimental: 100
 
+replicas: 1
+
 image:
   name: microservice-2
   master: beppev/IMAGE-NAME:MASTER

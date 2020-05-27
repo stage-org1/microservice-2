@@ -14,10 +14,18 @@ spec:
             host:  {{ .Values.image.name }}-service
             subset: experimental
           weight: {{ .Values.weight.experimental }}
+          headers:
+            request:
+              add:
+                version: experimental
         - destination:
             host:  {{ .Values.image.name }}-service
             subset: master
           weight: {{ .Values.weight.master }}
+          headers:
+            request:
+              add:
+                version: master
       retries:
         attempts: 3
         perTryTimeout: 1s

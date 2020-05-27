@@ -4,10 +4,10 @@ metadata:
   name:  {{ .Values.image.name }}-gateway
   namespace: stage-org1
   labels:
-    app: {{ .Values.image.name }}
+    app: {{ .Values.labels.app }}
 spec:
   selector:
-    name: {{ .Values.image.name }}
+    name: {{ .Values.labels.name }}
   servers:
     - port:
         number: 80

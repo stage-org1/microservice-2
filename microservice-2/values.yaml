@@ -1,6 +1,6 @@
 weight:
-  master: 50
-  experimental: 50
+  master: 20 
+  experimental: 80 
 
 replicas: 1
 

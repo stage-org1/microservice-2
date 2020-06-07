@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.image.name }}-service
   namespace: stage-org1
   labels:
-    app: {{ .Values.image.name }}
+    app: {{ .Values.labels.app }}
 spec:
   hosts:
     - {{ .Values.image.name }}-service
@@ -14,10 +14,18 @@ spec:
             host:  {{ .Values.image.name }}-service
             subset: experimental
           weight: {{ .Values.weight.experimental }}
+          headers:
+            request:
+              add:
+                version: experimental
         - destination:
             host:  {{ .Values.image.name }}-service
             subset: master
           weight: {{ .Values.weight.master }}
+          headers:
+            request:
+              add:
+                version: master
       retries:
         attempts: 3
         perTryTimeout: 1s

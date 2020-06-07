@@ -1,6 +1,12 @@
 weight:
-  master: 20
-  experimental: 80
+  master: 50
+  experimental: 50
+
+replicas: 1
+
+labels:
+  name: microservice-2
+  app: stage-org1-app
 
 image:
   name: microservice-2

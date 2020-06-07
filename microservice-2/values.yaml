@@ -6,7 +6,7 @@ replicas: 1
 
 labels:
   name: microservice-2
-  app: stage-org1-app
+  app: microservice-2
 
 image:
   name: microservice-2
